@@ -11,20 +11,23 @@ source:
   sha256: 6fb365a72814d55e50c09d582ec1014c60713cd86649a427977d8023875a24df
 
 build:
-  noarch: python
+  skip:
+  - win
+  - match(python, "<3.11")
+  - match(python, ">=3.14")
   script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
   number: 1
 
 requirements:
   host:
     - pip
-    - python ${{ python_min }}.*
+    - python 
     - setuptools
     - versioneer
 
   run:
     - __unix
-    - python >=${{ python_min }}
+    - python
     - numpy >=1.26
     - scipy >=1.13
     - emcee >=3.1.5
