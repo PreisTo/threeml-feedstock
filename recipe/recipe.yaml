@@ -65,8 +65,9 @@ tests:
       imports:
         - threeML 
       python_version:
-        - ${{ python_min }}
-        - "*"
+        - "3.11"
+        - "3.12"
+        - "3.13"
 
 
 about:
