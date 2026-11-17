@@ -27,7 +27,7 @@ requirements:
 
   run:
     - __unix
-    - python
+    - python 
     - numpy >=1.26
     - scipy >=1.13
     - emcee >=3.1.5
@@ -64,10 +64,7 @@ tests:
   - python:
       imports:
         - threeML 
-      python_version:
-        - "3.11"
-        - "3.12"
-        - "3.13"
+      pip_check: true
 
 
 about:
